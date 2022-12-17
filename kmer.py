@@ -10,16 +10,17 @@ def generate_all_sequences(n):
 
     sub_sequences = generate_all_sequences(n - 1)
     
-    sequences = []
+    base_pairs = []
 
     for sequence in sub_sequences:
 
         for nucleotide in nucleotides:
 
-                 sequences.append(nucleotide + sequence)
+                 base_pairs.append(nucleotide + sequence)
     
-    return sequences
+    return base_pairs
 
-print(generate_all_sequences(2))
 
-print(len(generate_all_sequences(2)))
+print(len(generate_all_sequences(5)))
+
+print(len(set(generate_all_sequences(5))))
